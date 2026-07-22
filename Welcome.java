@@ -1,8 +1,8 @@
 import java.util.Scanner;
-
 public class Welcome {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
+        
         System.out.print("Enter you First Name: ");
         String firstName = scanner.nextLine();
 
