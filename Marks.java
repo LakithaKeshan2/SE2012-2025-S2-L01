@@ -21,6 +21,7 @@ public class Marks {
         System.out.println("average_s [subjectID] - average for a subject");
         System.out.println("average [studentID] - average for a student");
         System.out.println("total [studentID] - total marks for a student");
+        System.out.println("grades - show grade summary for all students");
         System.out.println("exit - quit the program");
 
         while (true) {
@@ -46,6 +47,9 @@ public class Marks {
                     break;
                 case "total":
                     handleTotal(parts);
+                    break;
+                case "grades":
+                    handleGrades();
                     break;
                 case "exit":
                 case "quit":
@@ -161,5 +165,25 @@ public class Marks {
 
         double total = marks[id][0] + marks[id][1] + marks[id][2];
         System.out.printf("Total mark for student %d: %.2f%n", id, total);
+    }
+
+    static String getGrade(double score) {
+        if (score >= 90) return "A";
+        if (score >= 80) return "B";
+        if (score >= 70) return "C";
+        if (score >= 60) return "D";
+        return "Fail";
+    }
+
+    static void handleGrades() {
+        System.out.printf("%-10s %-12s %-12s %-12s%n", "StudentID", "Mathematics", "Chemistry", "Physics");
+        for (int i = 1; i <= n; i++) {
+            if (!added[i]) continue;
+            System.out.printf("%-10d %-12s %-12s %-12s%n",
+                    i,
+                    getGrade(marks[i][0]),
+                    getGrade(marks[i][1]),
+                    getGrade(marks[i][2]));
+        }
     }
 }
