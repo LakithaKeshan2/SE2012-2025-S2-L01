@@ -1,16 +1,17 @@
 import java.util.Scanner;
+
 public class Welcome {
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
-        
-        System.out.print("Enter you First Name: ");
-        String firstName = scanner.nextLine();
+        Scanner sc = new Scanner(System.in);
+
+        System.out.print("Enter your First Name: ");
+        String firstName = sc.nextLine();
 
         System.out.print("Enter your Last Name: ");
-        String lastName = scanner.nextLine();
+        String lastName = sc.nextLine();
 
-        System.out.println("Welcome to the Second Year " + firstName + " " + lastName + "!");
-        
-        scanner.close();
+        System.out.println("Welcome to the Second Year " + firstName + " " + lastName);
+
+        sc.close();
     }
 }
